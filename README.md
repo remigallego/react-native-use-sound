@@ -20,7 +20,7 @@ npm install react-native-use-sound
 
 ## Examples
 
-### Play sound on click
+### Play sound on press
 
 ```js
 import useSound from "react-native-use-sound";
@@ -30,7 +30,7 @@ import boopSfx from "../../sounds/boop.mp3";
 const BoopButton = () => {
   const [play] = useSound(boopSfx);
 
-  return <Button onClick={play}>Boop!</Button>;
+  return <Button onPress={play}>Boop!</Button>;
 };
 ```
 
