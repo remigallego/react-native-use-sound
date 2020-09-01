@@ -25,7 +25,7 @@ npm install react-native-use-sound
 ```js
 import useSound from "react-native-use-sound";
 
-import boopSfx from "../../sounds/boop.mp3";
+import boopSfx from "https://www.youramazingwebsite.com/boopSfx.mp3";
 
 const BoopButton = () => {
   const [play] = useSound(boopSfx);
