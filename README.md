@@ -1,8 +1,8 @@
-# useSound
+# react-native-use-sound
 
-### A React Native Hook for Sound Effects
+### A React Native Hook for Sound Effects 🔊
 
-React Native Use Sound is largely based on the work by @joshwcomeau **[use-sound](https://github.com/joshwcomeau/use-sound)**
+react-native-use-sound is largely based on the work by @joshwcomeau **[use-sound](https://github.com/joshwcomeau/use-sound)**
 
 ---
 
@@ -19,10 +19,6 @@ Or, use NPM:
 ```bash
 npm install react-native-use-sound
 ```
-
----
-
-## Demo
 
 ---
 
