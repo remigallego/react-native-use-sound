@@ -10,12 +10,14 @@ Package can be added using **yarn**:
 
 ```bash
 yarn add react-native-use-sound
+cd ios && pod install
 ```
 
 Or, use NPM:
 
 ```bash
 npm install react-native-use-sound
+cd ios && pod install
 ```
 
 ## Examples
