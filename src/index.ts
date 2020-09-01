@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import Sound from "react-native-sound";
 import { HookOptions, PlayFunction, PlayOptions, ReturnedValue } from "./types";
 
-export const useSound = (
+const useSound = (
   url: string,
   { volume = 1, soundEnabled = true, interrupt = false }: HookOptions = {}
 ) => {
@@ -90,3 +90,5 @@ export const useSound = (
   ];
   return returnedValue;
 };
+
+export default useSound;
