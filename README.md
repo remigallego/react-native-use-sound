@@ -27,9 +27,8 @@ cd ios && pod install
 ```js
 import useSound from "react-native-use-sound";
 
-import boopSfx from "https://www.youramazingwebsite.com/boopSfx.mp3";
-
 const BoopButton = () => {
+  const boopSfx = "https://s3.us-west-2.amazonaws.com/boopSfx.mp3";
   const [play] = useSound(boopSfx);
 
   return <Button onPress={play}>Boop!</Button>;
