@@ -37,7 +37,10 @@ const BoopButton = () => {
   };
 
   return (
-    <Button onPress={handlePlay}>{!data.isPlaying ? "Play" : "Pause"}</Button>
+    <Button
+      title={!data.isPlaying ? "Play" : "Pause"}
+      onPress={onPress}
+    ></Button>
   );
 };
 ```
