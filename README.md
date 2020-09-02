@@ -6,14 +6,26 @@ react-native-use-sound is largely based on the work by @joshwcomeau **[use-sound
 
 ## Installation
 
-Package can be added using **yarn**:
+You must first install `react-native-sound`
 
 ```bash
 yarn add react-native-use-sound
 cd ios && pod install
 ```
 
-Or, use NPM:
+Or
+
+```bash
+npm i react-native-use-sound
+```
+
+Then, our Hook can be added:
+
+```bash
+yarn add react-native-use-sound
+```
+
+Or
 
 ```bash
 npm install react-native-use-sound
