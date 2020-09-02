@@ -77,7 +77,7 @@ When calling `useSound`, you can pass it a variety of options:
 - `soundEnabled` allows you to pass a value (typically from context or redux or something) to mute all sounds. Note that this can be overridden in the `PlayOptions`, see below
 - `timeRate` is the frequency (in milliseconds) at which the `currentTime` value will be updated. Default is 1000,
 
-### ExposedData
+### Data
 
 The hook produces a tuple with 4 options, the play, pause, stop functions and an `Data` object:
 
