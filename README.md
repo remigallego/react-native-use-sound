@@ -29,9 +29,14 @@ import useSound from "react-native-use-sound";
 
 const BoopButton = () => {
   const boopSfx = "https://s3.us-west-2.amazonaws.com/boopSfx.mp3";
-  const [play] = useSound(boopSfx);
+  const [play, pause, stop, data] = useSound(boopSfx);
 
-  return <Button onPress={play}>Boop!</Button>;
+  const handlePlay = () => {
+    if(!data.isPlaying) play()
+    else pause()
+  }
+
+  return <Button onPress={handlePlay}>Boop!</Button>;
 };
 ```
 

@@ -4,7 +4,7 @@ export interface HookOptions {
   volume?: number;
   interrupt?: boolean;
   soundEnabled?: boolean;
-  onload?: () => void;
+  timeRate?: number;
 }
 
 export interface PlayOptions {
@@ -12,13 +12,18 @@ export interface PlayOptions {
 }
 
 export type PlayFunction = (options?: PlayOptions) => void;
+export type PauseFunction = (options?: PlayOptions) => void;
+export type StopFunction = (options?: PlayOptions) => void;
 
 export interface Data {
   sound: Sound | null;
-  stop: () => void;
-  pause: () => void;
+  seek: (seconds: number) => void;
   isPlaying: boolean;
-  duration: number | null;
+  duration: number;
+  currentTime: number;
+  loading: boolean;
 }
 
-export type ReturnedValue = [PlayFunction, Data];
+export type ReturnedValue = [PlayFunction, PauseFunction, StopFunction, Data];
+
+export type SoundData = Sound;

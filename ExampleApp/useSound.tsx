@@ -1,7 +1,34 @@
-import { useEffect, useState, useCallback, useRef } from "react";
-import Sound from "react-native-sound";
-import useInterval from "@use-it/interval";
-import { HookOptions, ReturnedValue, PlayFunction, PlayOptions } from "./types";
+import {useEffect, useState, useCallback, useRef} from 'react';
+import Sound from 'react-native-sound';
+import useInterval from '@use-it/interval';
+
+export interface HookOptions {
+  volume?: number;
+  interrupt?: boolean;
+  soundEnabled?: boolean;
+  timeRate?: number;
+}
+
+export interface PlayOptions {
+  forceSoundEnabled?: boolean;
+}
+
+export type PlayFunction = (options?: PlayOptions) => void;
+export type PauseFunction = (options?: PlayOptions) => void;
+export type StopFunction = (options?: PlayOptions) => void;
+
+export interface Data {
+  sound: Sound | null;
+  seek: (seconds: number) => void;
+  isPlaying: boolean;
+  duration: number;
+  currentTime: number;
+  loading: boolean;
+}
+
+export type ReturnedValue = [PlayFunction, PauseFunction, StopFunction, Data];
+
+export type SoundData = Sound;
 
 const useSound = (
   url: string,
@@ -10,7 +37,7 @@ const useSound = (
     soundEnabled = true,
     interrupt = false,
     timeRate = 1000,
-  }: HookOptions = {}
+  }: HookOptions = {},
 ) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [sound, setSound] = useState<Sound | null>(null);
@@ -40,9 +67,9 @@ const useSound = (
 
   useEffect(() => {
     setLoading(true);
-    Sound.setCategory("Playback");
+    Sound.setCategory('Playback');
     let isCancelled = false;
-    const _sound = new Sound(url, "", () => {
+    const _sound = new Sound(url, '', () => {
       setLoading(false);
       if (!isCancelled) {
         handleSetSound(_sound);
@@ -59,7 +86,7 @@ const useSound = (
       setLoading(true);
       stop();
       setSound(null);
-      const _sound = new Sound(url, "", () => {
+      const _sound = new Sound(url, '', () => {
         setLoading(false);
         handleSetSound(_sound);
       });
@@ -88,7 +115,7 @@ const useSound = (
       });
       setIsPlaying(true);
     },
-    [sound, soundEnabled, interrupt]
+    [sound, soundEnabled, interrupt],
   );
 
   const stop = useCallback(() => {
@@ -115,7 +142,7 @@ const useSound = (
       sound.setCurrentTime(sec);
       setCurrentTime(sec);
     },
-    [sound]
+    [sound],
   );
 
   const returnedValue: ReturnedValue = [
