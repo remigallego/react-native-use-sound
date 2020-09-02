@@ -21,7 +21,7 @@ import {
   Animated,
 } from "react-native";
 
-import useSound from "./useSound";
+import useSound from "react-native-use-sound";
 import { toHHMMSS } from "./utils";
 
 declare const global: { HermesInternal: null | {} };
