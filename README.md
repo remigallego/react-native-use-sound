@@ -25,8 +25,9 @@ npm install react-native-use-sound
 
 ```js
 import useSound from "react-native-use-sound";
+import { Button } from "react-native";
 
-const BoopButton = () => {
+const MusicButton = () => {
   const coolMusic =
     "http://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3";
   const [play, pause, stop, data] = useSound(coolMusic);
