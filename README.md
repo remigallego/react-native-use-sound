@@ -22,7 +22,7 @@ cd ios && pod install
 
 ## Examples
 
-### Play sound on press
+### Basic Example
 
 ```js
 import useSound from "react-native-use-sound";
