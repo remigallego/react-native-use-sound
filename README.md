@@ -28,13 +28,14 @@ cd ios && pod install
 import useSound from "react-native-use-sound";
 
 const BoopButton = () => {
-  const boopSfx = "https://s3.us-west-2.amazonaws.com/boopSfx.mp3";
+  const boopSfx =
+    "http://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3";
   const [play, pause, stop, data] = useSound(boopSfx);
 
   const handlePlay = () => {
-    if(!data.isPlaying) play()
-    else pause()
-  }
+    if (!data.isPlaying) play();
+    else pause();
+  };
 
   return <Button onPress={handlePlay}>Boop!</Button>;
 };
