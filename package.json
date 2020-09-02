@@ -8,6 +8,9 @@
   },
   "author": "@remigallego",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/remigallego/react-native-use-sound"
+  },
   "dependencies": {
     "@use-it/interval": "^0.1.3"
   },
