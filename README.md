@@ -40,8 +40,8 @@ const MusicButton = () => {
   return (
     <Button
       title={data.isPlaying ? "Pause" : "Play"}
-      onPress={onPress}
-    ></Button>
+      onPress={onPress} 
+    />
   );
 };
 ```
