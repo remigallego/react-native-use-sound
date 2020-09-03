@@ -33,13 +33,13 @@ const MusicButton = () => {
   const [play, pause, stop, data] = useSound(coolMusic);
 
   const handlePlay = () => {
-    if (!data.isPlaying) play();
-    else pause();
+    if (data.isPlaying) pause();
+    else play();
   };
 
   return (
     <Button
-      title={!data.isPlaying ? "Play" : "Pause"}
+      title={data.isPlaying ? "Pause" : "Play"}
       onPress={onPress}
     ></Button>
   );
@@ -100,5 +100,5 @@ const [play, pause, stop, data] = useSound("/meow.mp3");
 - `seek` is a function you can use to seek to a position in the sound.
 - `isPlaying` lets you know whether this sound is currently playing or not. When the sound reaches the end, or it's interrupted with `stop` or `paused`, this value will flip back to `false`. You can use this to show some UI only while the sound is playing.
 - `duration` is the length of the sample, in milliseconds.
-- `currentTime` is the current time of the sample, in milliseconds.
+- `currentTime` is the current time of the sample, in milliseconds. You can chose the rate at which this is updated by specifying `timeRate` in the hook options (see above).
 - `loading` lets you know whether the current sample is loading.
