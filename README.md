@@ -6,7 +6,7 @@ react-native-use-sound is largely based on the work by @joshwcomeau **[use-sound
 
 ## Installation
 
-⚠ You must first install `react-native-sound` ⚠
+⚠ You must first install [react-native-sound](https://github.com/zmxv/react-native-sound/pull/702) ⚠
 
 ```bash
 npm i react-native-sound
