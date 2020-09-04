@@ -1,6 +1,6 @@
 # react-native-use-sound
 
-### 🔊 A React Native Hook for playing sounds 🔊
+### 🔊 useSound - A React Native Hook for playing sounds 🔊
 
 react-native-use-sound is largely based on the work by @joshwcomeau **[use-sound](https://github.com/joshwcomeau/use-sound)**
 
