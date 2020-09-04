@@ -38,10 +38,16 @@ const MusicButton = () => {
   };
 
   return (
+  <>
     <Button
       title={data.isPlaying ? "Pause" : "Play"}
       onPress={handlePlay} 
     />
+    <Button
+      title={"Stop"}
+      onPress={stop} 
+    />
+  </>
   );
 };
 ```
