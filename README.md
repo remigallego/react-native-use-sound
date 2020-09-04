@@ -40,7 +40,7 @@ const MusicButton = () => {
   return (
     <Button
       title={data.isPlaying ? "Pause" : "Play"}
-      onPress={onPress} 
+      onPress={handlePlay} 
     />
   );
 };
