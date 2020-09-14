@@ -16,7 +16,7 @@ const useSound = (
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [sound, setSound] = useState<Sound | null>(null);
   const [duration, setDuration] = useState<number>(0);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const [currentTime, setCurrentTime] = useState(0);
 
   const durationRef = useRef();
@@ -27,6 +27,7 @@ const useSound = (
     setSound(_sound);
     setDuration(_sound.getDuration());
     setCurrentTime(0);
+    setLoading(false);
   };
 
   useInterval(() => {
@@ -48,9 +49,10 @@ const useSound = (
       basePath = Sound.MAIN_BUNDLE;
     }
     const _sound = new Sound(url, basePath, () => {
-      setLoading(false);
       if (!isCancelled) {
         handleSetSound(_sound);
+      } else {
+        setLoading(false);
       }
     });
 
@@ -69,7 +71,6 @@ const useSound = (
         basePath = Sound.MAIN_BUNDLE;
       }
       const _sound = new Sound(url, basePath, () => {
-        setLoading(false);
         handleSetSound(_sound);
       });
     }
