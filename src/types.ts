@@ -5,6 +5,7 @@ export interface HookOptions {
   interrupt?: boolean;
   soundEnabled?: boolean;
   timeRate?: number;
+  numberOfLoops?: number;
 }
 
 export interface PlayOptions {

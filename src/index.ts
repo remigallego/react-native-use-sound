@@ -11,6 +11,7 @@ const useSound = (
     soundEnabled = true,
     interrupt = false,
     timeRate = 1000,
+    numberOfLoops = 0,
   }: HookOptions = {}
 ) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -39,6 +40,12 @@ const useSound = (
       });
     }
   }, timeRate);
+
+  useEffect(() => {
+    if (sound) {
+      sound.setNumberOfLoops(numberOfLoops);
+    }
+  }, [sound, numberOfLoops]);
 
   useEffect(() => {
     setLoading(true);
