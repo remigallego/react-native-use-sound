@@ -78,11 +78,13 @@ When calling `useSound`, you can pass it a variety of options:
 | interrupt    | boolean |
 | soundEnabled | boolean |
 | timeRate     | number  |
+| numberOfLoops| boolean |
 
 - `volume` is a number from `0` to `1`, where `1` is full volume and `0` is comletely muted.
 - `interrupt` specifies whether or not the sound should be able to "overlap" if the `play` function is called again before the sound has ended.
 - `soundEnabled` allows you to pass a value (typically from context or redux or something) to mute all sounds. Note that this can be overridden in the `PlayOptions`, see below
 - `timeRate` is the frequency (in milliseconds) at which the `currentTime` value will be updated. Default is 1000,
+- `numberOfLoops` specifies the number of times you want the sound repeated. Note that you can use `-1` to  Loop indefinitely until stop() is called.
 
 ### Data
 
