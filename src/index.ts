@@ -87,7 +87,7 @@ const useSound = (
     if (sound) {
       sound.setVolume(volume);
     }
-  }, [volume]);
+  }, [volume, sound]);
 
   const play: PlayFunction = useCallback(
     (options?: PlayOptions) => {
